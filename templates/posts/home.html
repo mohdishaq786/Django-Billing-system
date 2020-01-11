@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+
+<!-- <body style="background-color:rgb(162, 168, 173);"> -->
+    <h1><center>School Billing System</center></h1>
+<!-- </body> -->
+    <style>
+        body {
+            background: url("{% static 'background.jpg' %}");
+            padding:5px;
+            /* width:1750px;
+            height:1200px; */
+            background-repeat:no-repeat;
+        }
+    </style>
+    <br>  
+    <form>
+        <center>
+        <input type="button" onclick="window.location.href = 'http://127.0.0.1:8000/enrollment/';" value="Click Here To Enroll"/>
+        <input type="button" onclick="window.location.href = 'http://127.0.0.1:8000/admin/login/';" value="Click Here for Admin Login"/>
+        </center>
+    </form>
+     <html>
+        <head>
+            <title>HTML Image as link</title>
+        </head>
+        <body> 
+    <div >
+        <br>
+        <br>
+        <center><img src="{% static 'institute.jpeg' %}" width=300 ></center>
+        <br>
+        <br>
+    </div><center>
+    <div class="razorpay-embed-btn" data-url="https://rzp.io/l/XgZWq1G" data-text="Pay Now" data-color="#528FF0" data-size="large">
+        <script>
+            (function(){
+            var d=document; var x=!d.getElementById('razorpay-embed-btn-js')
+            if(x){ var s=d.createElement('script'); s.defer=!0;s.id='razorpay-embed-btn-js';
+            s.src='https://cdn.razorpay.com/static/embed_btn/bundle.js';d.body.appendChild(s);} else{var rzp=window['__rzp__'];
+            rzp && rzp.init && rzp.init()}})();
+        </script>
+        </div></center>
+                    
+                    
+       <!----> </body> 
+        </html>
+{% endblock content %}

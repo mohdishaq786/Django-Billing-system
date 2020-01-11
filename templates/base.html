@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/styles/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/styles/main.css' %}">
+    {% if title %}
+        <title>School Billing System - {{ title }}</title>
+    {% else %}
+        <title>School Billing System</title>
+    {% endif %}
+</head>
+<body>    
+    
+    
+
+    <div class="container">
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+        {% block content %}{% endblock %}
+
+    </div>
+
+    <script src="{% static 'assets/scripts/jquery-3.3.1.slim.min.js' %}"></script>
+    <script src="{% static 'assets/scripts/popper.min.js' %}"></script>
+    <script src="{% static 'assets/scripts/bootstrap.min.js' %}"></script>
+    <script src="{% static 'assets/scripts/bs-custom-file-input.min.js' %}"></script>
+    <script>
+      bsCustomFileInput.init()
+      var btn = document.getElementById('btnResetForm')
+      var form = document.querySelector('form')
+      btn.addEventListener('click', function() {
+        form.reset()
+      })
+    </script>
+</body>
+</html>
